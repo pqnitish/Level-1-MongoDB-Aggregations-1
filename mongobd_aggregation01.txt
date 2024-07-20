@@ -1,0 +1,36 @@
+1Q.Write Mongo query to retrieve documents from the products where supplier_id is 3 .
+ans:db.products.aggregate([{$match:{supplier_id:3}}]);
+
+2Q.Write Mongo query to retrieve the documents from the orders collection with "status": "shipped" .
+ans: db.orders.aggregate([{$match:{status:"shipped"}}]);
+
+3Q.Write Mongo query to find buyers who from state CA ?
+ans:db.buyers.aggregate([{$match:{"address.state":"CA"}}]);
+
+4Q.Write Mongo query to retrieve the amount,paymentstatus and paymentMethod from payments.
+ans: db.payments.aggregate([{$project:{_id:0,amount:1,paymentMethod:1,paymentstatus:1}}]);
+
+5Q.Write Mongo query to retrieve documents from the orders with out _id.
+ans:db.orders.aggregate([{$project:{_id:0,customer_id:1,order_date:1,ship_date:1,status:1,total:1}}]);
+
+6Q.Write Mongo query to retrieve name,price from the products .
+ans:db.products.aggregate([{$project:{_id:0,name:1,price:1}}]);
+
+7Q.Write Mongo query to find buyers city and zip code ?
+ans:db.buyers.aggregate([{$project:{"address.city":1,"address.zip":1,_id:0}}]);
+
+8Q.Write Mongo query to find buyers name,email, city and zip code ?
+ans:db.buyers.aggregate([{$project:{"address.city":1,"address.zip":1,_id:0,name:1,email:1}}]);
+
+9Q.Write Mongo query to find suppliers name and phone ?
+ans: db.suppliers.aggregate([{$project:{_id:0,name:1,phone:1}}]);
+
+10Q.Write Mongo query to find buyers name,email, city and zip code ?
+ans:db.buyers.aggregate([{$project:{"address.city":1,"address.zip":1,_id:0,name:1,email:1}}]);
+
+11Q.Write Mongo query to find buyers city and zip code ?
+ans:db.buyers.aggregate([{$project:{"address.city":1,"address.zip":1,_id:0}}]);
+
+12Q.Write Mongo query to retrieve name,price from the products .
+ans:db.products.aggregate([{$project:{_id:0,name:1,price:1}}]);
+
